@@ -89,7 +89,6 @@ static int start_polling(int polling_milliseconds) {
         int n = poll(pollfd, 1, polling_milliseconds);
         if (n < 0 || n)
           break;
-        //if(n == 0) printf("+++>\n");
         if(n == 0) {
 					ssize_t _;
 					(void) _;
@@ -130,7 +129,7 @@ static VDECONN *vde_restart_open(char *vde_url, char *descr, int interface_versi
 
 	/* Get nested parameters */
 	nested_url = vde_parsenestparms(vde_url);
-	printf("%s %s\n", vde_url, nested_url);
+	// printf("%s %s\n", vde_url, nested_url);
 	if (vde_parseparms(vde_url, parms) != 0)
 		return NULL;
 	/* Open connection using the nested url */
